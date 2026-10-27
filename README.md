@@ -40,6 +40,8 @@ result.
 
 Supported cover types in this release: **blind**, **awning** and **tilt**.
 
+<img width="1882" height="1052" alt="image" src="https://github.com/user-attachments/assets/6d8e1e18-1365-4e88-8fd2-a566d980dfa3" />
+
 ---
 
 ## How it works
