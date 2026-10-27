@@ -6,6 +6,18 @@ This project uses [CalVer](https://calver.org/) in the format `YYYY.MM.PATCH`.
 The `PATCH` number resets to `1` at the start of each month. Every release is
 also tagged in git as `vYYYY.MM.PATCH`.
 
+## [2026.10.2] — 2026-10-27
+
+### Fixed
+
+- The Windows launcher now locates a real Python 3.12+ interpreter in the
+  standard install locations even when it is not on `PATH`, and never invokes
+  the Microsoft Store `python` stub, which could hang the first run.
+
+### Changed
+
+- The README now links the actual clone URL instead of a placeholder.
+
 ## [2026.10.1] — 2026-10-27
 
 Initial public release.

@@ -117,7 +117,7 @@ adaptive-cover-pro/
 2. **Clone the simulator into that folder as `simulator`:**
 
    ```bash
-   git clone <this-repo-url> simulator
+   git clone https://github.com/jonferreira/adaptive-cover-pro-simulator.git simulator
    ```
 
    The folder name matters: the launchers start `simulator.server:app`, and the
