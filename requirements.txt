@@ -1,0 +1,24 @@
+# Runtime dependencies for the Adaptive Cover Pro Simulator.
+#
+# Python 3.12+ is required. Note that the Home Assistant version pip resolves
+# depends on your Python version: Python 3.12 gets the 2025.1.x line, while
+# Python 3.13+ gets current releases. The simulator only relies on stable
+# Home Assistant helpers, so either works.
+homeassistant>=2025.1
+
+# Astronomical sun position (azimuth/elevation) for the simulated instant.
+astral>=2.2
+
+# Data handling inside the Adaptive Cover Pro engine.
+pandas>=2.3
+
+# IANA timezone database. Required on Windows, where the system tz database
+# is incomplete; harmless elsewhere.
+tzdata>=2024.1
+
+# Config validation used by the integration's schema helpers.
+voluptuous>=0.15
+
+# Local web server + API.
+fastapi>=0.115
+uvicorn[standard]>=0.30

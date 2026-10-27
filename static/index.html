@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adaptive Cover Pro — Simulator</title>
+  <link rel="stylesheet" href="/static/style.css?v=3" />
+</head>
+<body>
+  <header id="header">
+    <h1>Adaptive Cover Pro <span>Simulator</span></h1>
+
+    <div class="location-row">
+      <label>Lat <input id="lat" type="number" step="0.0001" value="0.0" /></label>
+      <label>Lon <input id="lon" type="number" step="0.0001" value="0.0" /></label>
+      <label>Elev (m) <input id="elev" type="number" step="1" value="0" /></label>
+      <label>TZ <input id="tz" type="text" value="UTC" list="tz-list" /></label>
+      <datalist id="tz-list">
+        <option value="UTC"></option>
+        <option value="Europe/London"></option>
+        <option value="Europe/Lisbon"></option>
+        <option value="America/New_York"></option>
+        <option value="America/Los_Angeles"></option>
+        <option value="Asia/Tokyo"></option>
+        <option value="Australia/Sydney"></option>
+      </datalist>
+    </div>
+
+    <div class="time-row">
+      <label>Date <input id="date" type="date" /></label>
+      <label class="slider-label">
+        Time <span id="time-readout">12:00</span>
+        <input id="time" type="range" min="0" max="1439" step="1" value="720" />
+      </label>
+      <div class="sun-readout">
+        <span>Az <b id="sun-az">—</b>°</span>
+        <span>Alt <b id="sun-alt">—</b>°</span>
+      </div>
+    </div>
+
+    <svg id="sunpath" viewBox="0 0 720 140" preserveAspectRatio="none"></svg>
+  </header>
+
+  <main>
+    <section id="config-panel">
+      <div class="panel-head">
+        <h2>Cover configuration</h2>
+        <div class="toolbar">
+          <select id="cover-type"></select>
+          <button id="import-btn" title="Paste a HA 'Download diagnostics' JSON">Import diagnostics</button>
+          <button id="export-btn" title="Copy the current config as a re-importable diagnostics JSON">Copy config</button>
+        </div>
+      </div>
+      <div id="import-box" class="hidden">
+        <textarea id="import-json" placeholder='Paste the JSON from Settings → Devices &amp; services → (your cover) → "Download diagnostics"…'></textarea>
+        <button id="import-run">Apply</button>
+        <button id="import-cancel">Cancel</button>
+      </div>
+      <div id="schema"></div>
+    </section>
+
+    <div id="middle">
+      <section id="entities-panel">
+        <div class="panel-head"><h2>Entities</h2></div>
+        <div id="entities"></div>
+      </section>
+      <section id="env-panel">
+        <div class="panel-head"><h2>Environment</h2></div>
+        <div id="env"></div>
+      </section>
+    </div>
+
+    <section id="result-panel">
+      <div class="panel-head"><h2>Result</h2></div>
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js?v=4"></script>
+</body>
+</html>
